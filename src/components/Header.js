@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Header = props => (
-  <header>
-    <span className='header-title'>
-      {props.title} Issues
+  <header className='header--container'>
+    <span className='header--title'>
+      &gt; {props.title} Issues
     </span>
   </header>
 )

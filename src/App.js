@@ -4,16 +4,19 @@ import Header from './components/Header'
 import IssueList from './components/IssueList'
 import Issue from './components/Issue'
 
-const TITLE='React.js'
-const OWNER = 'facebook'
-const REPO = 'react'
-const ISSUES_URL = `https://api.github.com/repos/${OWNER}/${REPO}/issues`
-
 class App extends Component {
-  state = { issues: [] }
+  state = {
+    title: 'React.js',
+    owner: 'facebook',
+    repo: 'react',
+    issues: []
+  }
 
   componentDidMount () {
-    fetch(ISSUES_URL)
+    const {owner, repo} = this.state
+    const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues`
+
+    fetch(issuesUrl)
       .then(response => response.json())
       .then(issues => {
         function isPullRequest (issue) {
@@ -26,15 +29,17 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
+        <Header title={this.state.title} />
 
-        <Header title={TITLE} />
-
-        <div style={{marginTop: 10}}>
-          <IssueList issues={this.state.issues} />
+        <div style={{marginTop: 100}}>
+          <Container>
+            <div style={{marginTop: 10}}>
+              <IssueList issues={this.state.issues} />
+            </div>
+          </Container>
         </div>
-
-      </Container>
+      </div>
     )
   }
 }

@@ -5,21 +5,30 @@ body {
   color: #504949;
 }
 
-.header-title { font-size: 64px; font-weight: bold }
-.header-subtitle { font-size: 24px; text-decoration: underline; }
+.header--container {
+ position: fixed;
+ top: 0;
+ width: 100%;
+ z-index: 999999;
+ background-color: #941919;
+ color: #fff;
+ padding: 10px;
+}
+
+.header--title { font-size: 58px; font-weight: bold }
 
 .card {
-  border-left: 5px solid #a62510;
+  border-left: 5px solid #b02f2f;
   padding: 10px;
   margin-bottom: 30px;
 }
 
 .card--title {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .card--badge {
-  background-color: #504949;
+  background-color: #b6572e;
   color: white;
   padding: 0px 5px 0px 5px;
 }
