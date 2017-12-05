@@ -2,7 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Slabo 27px', serif;
+  color: #504949;
 }
 
-.header-title { font-size: 40px; font-weight: bold }
-.header-subtitle { font-size: 20px; }
+.header-title { font-size: 64px; font-weight: bold }
+.header-subtitle { font-size: 24px; text-decoration: underline; }
+
+.card {
+  border-left: 5px solid #a62510;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.card--title {
+  font-size: 36px;
+}
+
+.card--badge {
+  background-color: #504949;
+  color: white;
+  padding: 0px 5px 0px 5px;
+}
+
+.card--openedBy {
+  font-size: 28px;
+}

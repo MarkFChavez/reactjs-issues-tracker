@@ -1,14 +1,10 @@
 import React from 'react'
 
 const Header = props => (
-  <header style={{textAlign: 'center'}}>
+  <header>
     <span className='header-title'>
-      {props.title}
+      {props.title} Issues
     </span>
-
-    <div>
-      <span className='header-subtitle'> {props.subtitle} </span>
-    </div>
   </header>
 )
 
