@@ -6,7 +6,7 @@ import Issue from './components/Issue'
 
 class App extends Component {
   state = {
-    title: 'React.js',
+    title: '#reactjs',
     owner: 'facebook',
     repo: 'react',
     issues: []
@@ -31,14 +31,11 @@ class App extends Component {
     return (
       <div>
         <Header title={this.state.title} />
-
-        <div style={{marginTop: 100}}>
-          <Container>
-            <div style={{marginTop: 10}}>
-              <IssueList issues={this.state.issues} />
-            </div>
-          </Container>
-        </div>
+        <Container>
+          <div style={{marginTop: 10}}>
+            <IssueList issues={this.state.issues} />
+          </div>
+        </Container>
       </div>
     )
   }

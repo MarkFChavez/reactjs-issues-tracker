@@ -6,16 +6,18 @@ body {
 }
 
 .header--container {
- position: fixed;
- top: 0;
- width: 100%;
- z-index: 999999;
  background-color: #941919;
  color: #fff;
  padding: 10px;
 }
 
 .header--title { font-size: 58px; font-weight: bold }
+.header--subtitle { font-size: 20px; }
+a.header--self { color: white; }
+a.header--self:hover { border-bottom: 1px solid white; text-decoration: none; }
+
+a.header--self--underlined { color: white; border-bottom: 1px solid white; }
+a.header--self--underlined:hover { text-decoration: none; }
 
 .card {
   border-left: 5px solid #b02f2f;
@@ -23,11 +25,15 @@ body {
   margin-bottom: 30px;
 }
 
-.card--title {
-  font-size: 32px;
+a.card--title { font-size: 32px; color: #504949; text-decoration: none; }
+
+a.card--title:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #504949;
 }
 
 .card--badge {
+  font-size: 32px;
   background-color: #b6572e;
   color: white;
   padding: 0px 5px 0px 5px;
