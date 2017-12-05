@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Container from './components/Container'
 import Header from './components/Header'
 import IssueList from './components/IssueList'
 import Issue from './components/Issue'
@@ -14,7 +13,7 @@ class App extends Component {
 
   componentDidMount () {
     const {owner, repo} = this.state
-    const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues`
+    const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
 
     fetch(issuesUrl)
       .then(response => response.json())
@@ -31,11 +30,9 @@ class App extends Component {
     return (
       <div>
         <Header title={this.state.title} />
-        <Container>
-          <div style={{marginTop: 10}}>
-            <IssueList issues={this.state.issues} />
-          </div>
-        </Container>
+        <div style={{marginTop: 10, marginLeft: 10}}>
+          <IssueList issues={this.state.issues} />
+        </div>
       </div>
     )
   }
