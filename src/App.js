@@ -48,6 +48,7 @@ class App extends Component {
         <div>
           <Header title={'JS Issues'} />
 
+
           {/* ROOT */}
           <Route exact path='/' render={props =>
             <IssueListView

@@ -122,22 +122,21 @@ a.card--title:hover {
 }
 
 .llink {
-  font-size: 24px;
+  font-size: 36px;
   margin-left: 5px;
   margin-right: 5px;
   padding: 5px;
   color: white;
 }
 
-.llink:hover { color: white; }
-.llink:link { color: white; }
-
 .active-link {
-  background-color:#34a853;
+  color: #000;
 }
 
+.active-link:hover { color: #000; }
+
 .not-active-link {
-  background-color: lightgray;
+  background-color:	#34a853;
   pointer-events: none;
   cursor: default;
 }
