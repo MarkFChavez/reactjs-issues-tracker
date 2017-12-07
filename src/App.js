@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
-import IssueList from './components/IssueList'
-import Issue from './components/Issue'
+import IssueListView from './components/IssueListView'
+import IssueDetailView from './components/IssueDetailView'
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -31,16 +35,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header title={this.state.title} />
-        <div style={{marginTop: 10, marginLeft: 10}}>
-          {
-            this.state.loading
-              ? <span className='loading'> Looking for some issues you can work on </span>
-              : <IssueList issues={this.state.issues} />
-          }
+      <Router>
+        <div>
+          <Header title={this.state.title} />
+
+          {/* routes */}
+          <Route exact path='/' render={() => <IssueListView {...this.state} />} />
+          <Route path='/issues/:id' render={IssueDetailView} />
         </div>
-      </div>
+      </Router>
     )
   }
 }
