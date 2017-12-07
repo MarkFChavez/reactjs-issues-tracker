@@ -3,7 +3,7 @@ import React from 'react'
 const Header = props => (
   <header className='header--container'>
     <span className='header--title'>
-      {props.title} Issues
+      <a href='/' className='header--self'>{props.title} Issues</a>
     </span>
 
     <div>

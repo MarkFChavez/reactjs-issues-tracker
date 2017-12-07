@@ -13,15 +13,17 @@ class App extends Component {
   }
 
   componentDidMount () {
+    this.getIssues()
+  }
+
+  getIssues () {
     const {owner, repo} = this.state
     const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
+    const isPullRequest = issue => issue.pull_request === undefined
 
     fetch(issuesUrl)
       .then(response => response.json())
       .then(issues => {
-        function isPullRequest (issue) {
-          return issue.pull_request === undefined
-        }
         this.setState({issues: issues.filter(isPullRequest), loading: false})
       })
       .catch(e => e)

@@ -41,6 +41,7 @@ a.card--title:hover {
 
 .card--openedBy {
   font-size: 28px;
+  font-style: italic;
 }
 
 .card--label {
