@@ -24,7 +24,7 @@ class IssueListView extends Component {
 
         {
           loading
-            ? <Loading text='Looking for some issues you can work on' />
+            ? <Loading text={`Looking for "${this.props.source.repo}" issues you can work on`} />
             : <IssueList issues={issues} source={this.props.source} />
         }
       </div>
