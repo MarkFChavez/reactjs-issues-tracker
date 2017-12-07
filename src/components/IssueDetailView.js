@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import IssueDetail from './IssueDetail'
-
+import Loading from './Loading'
 class IssueDetailView extends Component {
 
   state = { detail: null }
@@ -23,11 +23,7 @@ class IssueDetailView extends Component {
     return (
       this.state.detail
         ? <IssueDetail issue={this.state.detail} />
-        : (
-          <div style={{marginTop: 10, marginLeft: 10}}>
-            <div className='loading'>Loading issue detail</div>
-          </div>
-        )
+        : <Loading text='Loading issue detail' />
     )
   }
 

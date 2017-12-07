@@ -15,6 +15,7 @@ body {
 .header--subtitle { font-size: 20px; }
 a.header--self { color: white; }
 a.header--self:hover { border-bottom: 1px solid white; text-decoration: none; }
+a.header--self:link { color: white; text-decoration: none; }
 
 a.header--self--underlined { color: white; border-bottom: 1px solid white; }
 a.header--self--underlined:hover { text-decoration: none; }
@@ -95,9 +96,19 @@ a.card--title:hover {
 
 .issue-detail--container {
   border-top: 10px solid #941919;
-  border-left: 3px solid #504949;
-  border-right: 3px solid #504949;
-  border-bottom: 3px solid #504949;
-  padding: 5px;
+  border-bottom: 10px solid #941919;
   font-size: 24px;
+}
+
+.join-conversation--link {
+  font-size: 30px;
+  background-color: #941919;
+  color: white;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.join-conversation--link:hover {
+  text-decoration: none;
+  color: white;
 }

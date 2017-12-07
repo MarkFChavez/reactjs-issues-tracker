@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = props => (
   <header className='header--container'>
     <span className='header--title'>
-      <a href='/' className='header--self'>{props.title} Issues</a>
+      <Link to='/' className='header--self'>{props.title} Issues</Link>
     </span>
 
     <div>
