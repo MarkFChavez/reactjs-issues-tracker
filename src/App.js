@@ -8,7 +8,8 @@ class App extends Component {
     title: '#reactjs',
     owner: 'facebook',
     repo: 'react',
-    issues: []
+    issues: [],
+    loading: true
   }
 
   componentDidMount () {
@@ -21,7 +22,7 @@ class App extends Component {
         function isPullRequest (issue) {
           return issue.pull_request === undefined
         }
-        this.setState({issues: issues.filter(isPullRequest)})
+        this.setState({issues: issues.filter(isPullRequest), loading: false})
       })
       .catch(e => e)
   }
@@ -31,7 +32,11 @@ class App extends Component {
       <div>
         <Header title={this.state.title} />
         <div style={{marginTop: 10, marginLeft: 10}}>
-          <IssueList issues={this.state.issues} />
+          {
+            this.state.loading
+              ? <span className='loading'> Looking for some issues you can work on </span>
+              : <IssueList issues={this.state.issues} />
+          }
         </div>
       </div>
     )

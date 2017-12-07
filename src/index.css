@@ -42,3 +42,35 @@ a.card--title:hover {
 .card--openedBy {
   font-size: 28px;
 }
+
+.card--label {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 10px 0px 0px;
+  padding: 5px;
+}
+
+.loading { font-size: 20px; }
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
