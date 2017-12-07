@@ -53,6 +53,13 @@ a.card--title:hover {
   padding: 5px;
 }
 
+.label-link {
+  color: inherit;
+}
+
+.label-link:hover { text-decoration: none; }
+.label-link:link { text-decoration: none; }
+
 .loading { font-size: 20px; }
 
 .loading:after {
