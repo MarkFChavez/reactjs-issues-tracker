@@ -15,7 +15,6 @@ const REPOS = {
 
 class App extends Component {
   state = {
-    title: '#reactjs',
     owner: 'facebook',
     repo: 'react',
     issues: [],
@@ -26,7 +25,7 @@ class App extends Component {
     const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
     const isPullRequest = issue => issue.pull_request === undefined
 
-    this.setState({loading: true})
+    this.setState({loading: true, owner, repo})
 
     fetch(issuesUrl)
       .then(response => response.json())
@@ -47,7 +46,6 @@ class App extends Component {
       <Router>
         <div>
           <Header title={'JS Issues'} />
-
 
           {/* ROOT */}
           <Route exact path='/' render={props =>
@@ -79,7 +77,10 @@ class App extends Component {
               {...props} />
           }/>
 
-          <Route path='/issues/:number' render={props => <IssueDetailView owner={owner} repo={repo} {...props} />} />
+          <Route
+            path='/issues/:number'
+            render={props => <IssueDetailView owner={owner} repo={repo} {...props} />}
+          />
         </div>
       </Router>
     )
