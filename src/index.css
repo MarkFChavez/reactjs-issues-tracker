@@ -75,3 +75,29 @@ a.card--title:hover {
     width: 20px;
   }
 }
+
+.issue-detail {
+  margin-bottom: 20px;
+}
+
+.issue-detail pre {
+  background-color: #f6f8fa;
+  padding: 5px;
+}
+.issue-detail code {
+  font-size: 14px;
+}
+
+.issue-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.issue-detail--container {
+  border-top: 10px solid #941919;
+  border-left: 3px solid #504949;
+  border-right: 3px solid #504949;
+  border-bottom: 3px solid #504949;
+  padding: 5px;
+  font-size: 24px;
+}

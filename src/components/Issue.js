@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import * as helpers from '../helpers'
 
 const Issue = props => {
-  const {id, number, title, user, labels} = props
+  const {number, title, user, labels} = props
 
   return (
     <div className='card'>
       <strong>
         <span className='card--badge'>#{number}</span>{' '}
-        <Link className='card--title' style={{marginLeft: 5}} to={`/issues/${id}`}>
+        <Link className='card--title' style={{marginLeft: 5}} to={`/issues/${number}`}>
           {title}
         </Link>
       </strong>

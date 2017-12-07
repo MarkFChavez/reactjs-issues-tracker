@@ -40,8 +40,8 @@ class App extends Component {
           <Header title={this.state.title} />
 
           {/* routes */}
-          <Route exact path='/' render={() => <IssueListView {...this.state} />} />
-          <Route path='/issues/:id' render={IssueDetailView} />
+          <Route exact path='/' render={props => <IssueListView {...this.state} {...props} />} />
+          <Route path='/issues/:number' render={props => <IssueDetailView {...this.state} {...props} />} />
         </div>
       </Router>
     )
