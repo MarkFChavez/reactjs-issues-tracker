@@ -120,3 +120,24 @@ a.card--title:hover {
   text-decoration: none;
   color: white;
 }
+
+.llink {
+  font-size: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.llink:hover { color: white; }
+.llink:link { color: white; }
+
+.active-link {
+  background-color:#34a853;
+}
+
+.not-active-link {
+  background-color: lightgray;
+  pointer-events: none;
+  cursor: default;
+}

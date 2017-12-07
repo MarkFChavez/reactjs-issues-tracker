@@ -19,17 +19,14 @@ class App extends Component {
     owner: 'facebook',
     repo: 'react',
     issues: [],
-    loading: true
+    loading: false
   }
 
-  componentDidMount () {
-    this.getIssues()
-  }
-
-  getIssues () {
-    const {owner, repo} = this.state
+  getIssues ({owner, repo}) {
     const issuesUrl = `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
     const isPullRequest = issue => issue.pull_request === undefined
+
+    this.setState({loading: true})
 
     fetch(issuesUrl)
       .then(response => response.json())
@@ -39,27 +36,46 @@ class App extends Component {
       .catch(e => e)
   }
 
+  onLoad (source) {
+    this.getIssues(source)
+  }
+
   render() {
     const {title, loading, issues, owner, repo} = this.state
 
     return (
       <Router>
         <div>
-          <Header title={title} />
+          <Header title={'JS Issues'} />
 
           {/* ROOT */}
           <Route exact path='/' render={props =>
-            <IssueListView loading={loading} issues={issues} {...props} />
+            <IssueListView
+              onLoad={this.onLoad.bind(this)}
+              loading={loading}
+              issues={issues}
+              source={REPOS['reactjs']}
+              {...props} />
           }/>
 
           {/* REDUX */}
           <Route exact path='/redux' render={props =>
-            <IssueListView loading={loading} issues={issues} {...props} />
+            <IssueListView
+              onLoad={this.onLoad.bind(this)}
+              loading={loading}
+              issues={issues}
+              source={REPOS['redux']}
+              {...props} />
           }/>
 
           {/* WEBPACK */}
           <Route exact path='/webpack' render={props =>
-            <IssueListView loading={loading} issues={issues} {...props} />
+            <IssueListView
+              onLoad={this.onLoad.bind(this)}
+              loading={loading}
+              issues={issues}
+              source={REPOS['webpack']}
+              {...props} />
           }/>
 
           <Route path='/issues/:number' render={props => <IssueDetailView owner={owner} repo={repo} {...props} />} />
