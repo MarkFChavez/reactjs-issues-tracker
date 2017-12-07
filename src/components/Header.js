@@ -14,6 +14,10 @@ const Header = props => (
         <br />
         If you want to contribute, you are encouraged to do so! {' '}
         Start <a href='https://github.com/mrkjlchvz/reactjs-issues-tracker/pulls' className='header--self--underlined'>here</a>.
+        <br />
+        Also check other projects such as {' '}
+        <Link to='/redux' className='header--self--underlined'>#redux</Link> and {' '}
+        <Link to='/webpack' className='header--self--underlined'>#webpack</Link>.
       </small>
     </div>
   </header>

@@ -7,6 +7,12 @@ import {
   Route,
 } from 'react-router-dom'
 
+const REPOS = {
+  reactjs: {owner: 'facebook', repo: 'react'},
+  redux: {owner: 'reactjs', repo: 'redux'},
+  webpack: {owner: 'webpack', repo: 'webpack'}
+}
+
 class App extends Component {
   state = {
     title: '#reactjs',
@@ -34,14 +40,29 @@ class App extends Component {
   }
 
   render() {
+    const {title, loading, issues, owner, repo} = this.state
+
     return (
       <Router>
         <div>
-          <Header title={this.state.title} />
+          <Header title={title} />
 
-          {/* routes */}
-          <Route exact path='/' render={props => <IssueListView {...this.state} {...props} />} />
-          <Route path='/issues/:number' render={props => <IssueDetailView {...this.state} {...props} />} />
+          {/* ROOT */}
+          <Route exact path='/' render={props =>
+            <IssueListView loading={loading} issues={issues} {...props} />
+          }/>
+
+          {/* REDUX */}
+          <Route exact path='/redux' render={props =>
+            <IssueListView loading={loading} issues={issues} {...props} />
+          }/>
+
+          {/* WEBPACK */}
+          <Route exact path='/webpack' render={props =>
+            <IssueListView loading={loading} issues={issues} {...props} />
+          }/>
+
+          <Route path='/issues/:number' render={props => <IssueDetailView owner={owner} repo={repo} {...props} />} />
         </div>
       </Router>
     )
